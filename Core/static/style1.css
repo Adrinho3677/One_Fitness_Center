@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(0deg, var(--cor1) 5%, var(--cor2) 28%, var(--cor2) 48%, var(--cor2) 74%, var(--cor3) 95%);
+    
+    --lua: url(../static/lua-removebg-preview.png);
+    --cor1: #0F3A38;
+    --cor2: #197770;
+    --cor3: #16BEB5;
+    --cor4: #000000;
+    --cor5: #ffffff;
+
+}
+
+.sair {
+    color: var(--cor2);
+    border-radius: 5px;
+    border-color: var(--cor2);
+    background-color: var(--cor2);
+}
+
+.sair a {
+    background-color: var(--cor2);
+    text-decoration: none;
+    color: var(--cor5);
+}
+
+body.dark-mode{
+
+    --lua: url(../static/sol-removebg-preview.png);
+    --cor1: #072523;
+    --cor2: #0b605a;
+    --cor3: #049a93;
+    --cor4: #ffffff;
+    --cor5: #000000;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    align-items: center;
+    color: var(--cor4);
+}
+
+hr{
+    border-color: var(--cor4);
+    width:100%;  
+}
+
+main section.pg-inicio{
+    color: var(--cor5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+main section.sobre-espaço{
+    color: var(--cor5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+main section.planos{
+    color: var(--cor5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.img1 {
+    width: 1000px;
+    height: 500px;
+}
+
+.logo {
+    height: 80px;
+    width: 100px;
+}
+
+.titulo {
+    color: var(--cor5);
+    padding-right: 10px;
+}
+
+ul {
+    list-style: none;
+    background-color: var(--cor3);
+    text-align: center;
+    }
+    ul li {
+    display: inline-block;
+    position: relative;
+    }
+    ul li a {
+    color: var(--cor5);
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    }
+    ul li ul.dropdown li {
+    display: block;
+    margin: 2px 0px;
+    }
+    ul li ul.dropdown {
+    width:auto;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    }
+    ul li a:hover {
+    background: var(--cor2);
+    }
+    ul li:hover ul.dropdown{
+    display: block;
+    }
+
+ul.lista-plano {
+    background-color: var(--cor5);
+}
+
+.nome-plano {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-plano {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel-img {
+    width: 1600px;
+    height: 700px;
+}

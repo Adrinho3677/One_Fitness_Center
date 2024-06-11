@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(0deg,#0F3A38 5%, #197770 28%, #197770 48%, #197770 74%, #16BEB5 95%);
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    color: #ffffff;
+    width: 100%;
+}
+
+hr{
+    border-color:rgb(0, 0, 0);
+    width:100%;  
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.logo {
+    height: 80px;
+    width: 100px;
+}
+
+.titulo {
+    padding-right: 10px;
+}
+
+.assinatura {
+    text-align: center;
+    color: white;
+}
+
+.assinatura input {
+    background-color: #16BEB5;
+    margin: 15px;
+}
+
+.btn {
+    background-color: #20817B;
+    text-decoration: none;
+    border-radius: 6px;
+    border-width: 2px;
+    margin: 10px;
+}
+
+.btn-file {
+    background-color: #20817B;
+    text-decoration: none;
+    border-radius: 6px;
+    border-width: 2px;
+    margin: 10px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
