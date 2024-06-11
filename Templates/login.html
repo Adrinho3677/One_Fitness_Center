@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style3.css' %}">
+  <title>The One Fitness Center</title>
+</head>
+
+<body>
+
+    <header>
+
+        <h1 class="titulo">The One Fitness Center</h1>
+
+        <a href="{% url 'index' %}#pg-inicio"><img class="logo" src="{% static 'logo-removebg-preview.png' %}" alt="Logo"></a>
+
+    </header>
+
+    <hr/>
+
+    <main class="login">
+
+    <form action="{% url 'login' %}" method="POST">
+
+        {% csrf_token %}
+
+        <h1>Email</h1>
+        <input type="Email" name="email">
+
+        <h1>Senha</h1>
+        <input type="Senha1" name="senha">
+        
+        <section>
+            
+            <button class="btn btn-primary" type="submit">Entrar</button>
+
+            <button class="btn btn-primary" type="submit"><a href="{% url 'cadastro' %}"> Cadastro </a></button>
+
+        </section>
+    </form>
+
+
+
+
+
+    </main>
+
+    <footer>
+
+        <p>&copy; 2024 The One Fitness Center. Todos os direitos reservados.</p>
+    
+    </footer>
+    
+</body>
+
+</html>

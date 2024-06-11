@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style4.css' %}">
+  <title>The One Fitness Center</title>
+</head>
+
+<body>
+
+    <header>
+
+        <h1 class="titulo">The One Fitness Center</h1>
+
+        <a href="{% url 'index' %}#pg-inicio"><img class="logo" src="{% static 'logo-removebg-preview.png' %}" alt="Logo"></a>
+
+    </header>
+
+    <hr/>
+
+    <main class="assinatura">
+
+    <form action="{% url 'assinatura' %}" method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <h1>Nome</h1>
+        <input type="Nome" name="nome">
+
+
+        <section>
+    
+            <h1>Descrição</h1>
+            <textarea class="form-control" name="desc"></textarea>
+            
+        </section>
+
+        <h1>Foto</h1>
+        <input class="btn btn-primary" type="file" name="img" accept="image/*">
+
+        <section>
+            
+            <button class="btn btn-primary" type="submit">Criar Assinatura</button>
+
+            <button class="btn btn-primary" type="submit"><a href="{% url 'index' %}"> Voltar ao Início </a></button>
+
+        </section>
+    </form>
+
+    </main>
+
+    <footer>
+
+        <p>&copy; 2024 The One Fitness Center. Todos os direitos reservados.</p>
+    
+    </footer>
+    
+</body>
+
+</html>

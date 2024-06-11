@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style1.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>The One Fitness Center</title>
+</head>
+<body>
+  <header>
+    
+
+    <ul>
+      <li>
+        <a href="#">••• &#x25BE;</a>
+        <ul class="dropdown">
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="{% url 'cadastro' %}">Cadastro</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h1 class="titulo">The One Fitness Center</h1>
+
+    <button onclick="toggleTheme()">
+      <img class="Icone" src="{% static 'sol-removebg-preview.png' %}" id="clique">
+    </button>
+
+    <button class="sair" type="submit"><a href="{% url 'logout' %}"> Sair </a></button>
+
+    <a href="#pg-inicio"><img class="logo" src="{% static 'logo-removebg-preview.png' %}" alt="Logo"></a>
+
+  </header>
+
+  <hr/>
+
+  <main>
+
+    <section class="pg-inicio" id="pg-inicio">
+
+        <h2>Sobre Nós</h2>
+        
+        <p>Acreditamos em promover um estilo de vida ativo e saudável para todos os nossos membros. Aqui estão algumas informações importantes sobre nossa academia:</p>
+        
+        <p>Nossos treinadores altamente qualificados estão aqui para ajudá-lo a alcançar seus objetivos de forma rápida e eficaz. Oferecemos treinamento personalizado para ajudá-lo a desenvolver um programa de exercícios adaptado às suas necessidades e objetivos individuais.</p>
+        
+        <img class="img1" src="https://lh7-us.googleusercontent.com/y_aZEZZq6HBo4hvXH3GFB24eLKp-xah1H1RxaNHgzx8NQNptSZixvWqhv9Qq12EVTdRzMiA5ENkL64KY19uKcztY-aMb7j8GdsY72a1JKApzfFs7OjQVsOlW3QPi7aq0XUvlqpsl9RQEdMmeCYAqr5I" alt="treino personalizado">
+        
+        <p>Além dos treinos regulares, organizamos eventos especiais e atividades em grupo para ajudar a construir uma comunidade forte e conectada. De desafios de condicionamento físico a aulas temáticas, há sempre algo acontecendo na Academia The One Fitness Center.</p>
+        
+        <img src="https://conteudo.imguol.com.br/c/entretenimento/28/2018/06/12/aula-academia-salto-treino-exercicio-1528838770211_v2_900x506.jpg" alt="treino personalizado">
+        
+        <p>Nada nos deixa mais felizes do que ver nossos membros alcançando seus objetivos e aproveitando ao máximo sua experiência na academia. Estamos aqui para apoiá-lo em cada passo do caminho.</p>
+
+    </section>
+
+    <section class="sobre-espaço" id="sobreoespaço">
+      
+      <h2>Espaço the one fitness center</h2>
+      
+      <p>"Na Academia The One Fitness Center, temos um espaço amplo e moderno projetado para proporcionar a melhor experiência de treino aos nossos membros. Nossa academia possui uma variedade de áreas dedicadas a diferentes tipos de exercícios, incluindo uma ampla sala de musculação equipada com os mais recentes equipamentos de alta qualidade, uma área de cardio com esteiras, bicicletas ergométricas e elípticos, e uma zona de treinamento funcional com acessórios como TRX, kettlebells e bolas suíças..</p>
+
+    <section class="carousel">
+
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="carousel-img" src="https://s3.amazonaws.com/smartsystem-prod/pictures/8084/big/sala-de-ginastica.jpg?1618436679" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img class="carousel-img" src="https://s3.amazonaws.com/smartsystem-prod/pictures/9001/big/eliptico.jpg?1618436746" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img class="carousel-img" src="https://s3.amazonaws.com/smartsystem-prod/pictures/12613/big/DSC_4716.jpg?1701381792" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+
+    </section>
+    
+    </section>
+    
+    <section class="planos" id="planos">
+     
+      <h2>Planos Disponíveis para você</h2>
+      
+      <p>Temos váriedades de planos , para que você possa ter a oportunidade de escolher o que melhor se encaixa no seu padrão.</p>
+
+      <section class="assinatura">
+
+        <button class="sair ass"><a href="{% url 'assinatura' %}">Cadastrar assinatura</a></button>
+
+      </section>
+      
+      <section class="card-plano">
+
+        {% for dado in dados %}
+
+        <div class="card" style="width: 18rem;">
+
+          <a href="#"><img class="card-img-top" src="{{dado.foto.url}}" alt="plano"></a>
+          <div class="card-body">
+            <h5 class="card-title">{{dado.nome}}</h5>
+            <p class="card-text">{{dado.descricao}}</p>
+
+            <a href="{% url 'info' dado.id %}" class="btn btn-primary">Detalhes</a>
+          </div>
+
+        </div>
+
+        {% endfor %}
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>&copy; 2024 The One Fitness Center. Todos os direitos reservados.</p>
+
+  </footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="{% static 'script.js' %}"></script>
+</html>

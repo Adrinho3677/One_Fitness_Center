@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style3.css' %}">
+  <title>The One Fitness Center</title>
+</head>
+
+<body>
+
+    <header>
+
+        <h1 class="titulo">The One Fitness Center</h1>
+
+        <a href="{% url 'index' %}#pg-inicio"><img class="logo" src="{% static 'logo-removebg-preview.png' %}" alt="Logo"></a>
+
+    </header>
+
+    <hr/>
+
+    <main class="info">
+
+      <form action="{% url 'info_delete' dados.id %}" method="POST">
+
+        {% csrf_token %}
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 cards">
+          {% if dados %}
+          <div class="col">
+            <div class="card">
+              <img src="{{dados.foto.url}}" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="#"><h5 class="card-title">{{dados.nome}}</h5></a>
+                <p class="card-text">
+                  {{dados.descricao}}
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          <section>
+          
+            <button class="btn btn-primary" type="submit">Excluir Assinatura</button>
+
+            <button class="btn btn-primary" type="submit"><a href="{% url 'index' %}"> Voltar ao Início </a></button>
+
+          </section>
+
+      </div>
+
+      </form>
+
+    </main>
+
+    <footer>
+
+        <p>&copy; 2024 The One Fitness Center. Todos os direitos reservados.</p>
+    
+    </footer>
+    
+</body>
+
+</html>
